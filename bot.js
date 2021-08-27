@@ -15,18 +15,22 @@ client.on("messageCreate", (msg) => {
       if (msg.author.id != client.user.id) {
         const collector = msg.channel.createMessageCollector({
           filter,
-          time: 15000,
-        });
-        let bets = [];
-        collector.on("collect", (m) => {
-          console.log(`Collected ${m.content}`);
-          msg.channel.send(`Collected ${m.content}`);
+          max: 1,
         });
 
-        collector.on("end", (collected) => {
-          console.log(`Collected ${collected.size} items`);
-          msg.channel.send(`Collected ${collected.size} items`);
+        collector.on("collect", (m) => {
+          const shotBetChannel = client.channels.cache.find(
+            (channel) => channel.id === "771466181554733097"
+          );
+          // console.log(`Collected ${m.content}`);
+          shotBetChannel.send(`${m.content}`);
+          // msg.channel.send(`Collected ${m.content}`);
         });
+
+        // collector.on("end", (collected) => {
+        //   console.log(`Collected ${collected.size} items`);
+        //   msg.channel.send(`Collected ${collected.size} items`);
+        // });
       }
     });
   }
