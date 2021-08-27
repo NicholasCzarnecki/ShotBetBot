@@ -4,6 +4,12 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
+
 client.once("ready", () => {
   console.log(`${client.user.tag} is ready to go!`);
 });
