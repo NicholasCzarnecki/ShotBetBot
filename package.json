@@ -4,8 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
-    "devStart": "nodemon bot.js"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",

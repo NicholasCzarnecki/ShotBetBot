@@ -4,9 +4,6 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
-const port = process.env.PORT
-server.listen(port, () => {
-  console.log(`Server Running on port: ${port}`);
 client.once("ready", () => {
   console.log(`${client.user.tag} is ready to go!`);
 });
