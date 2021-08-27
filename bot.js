@@ -8,7 +8,7 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
 }
-app.listen(port);
+shotbet - bot.listen(port);
 
 client.once("ready", () => {
   console.log(`${client.user.tag} is ready to go!`);
