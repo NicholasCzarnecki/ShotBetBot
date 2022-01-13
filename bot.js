@@ -22,15 +22,8 @@ client.on("messageCreate", (msg) => {
           const shotBetChannel = client.channels.cache.find(
             (channel) => channel.id === "771466181554733097"
           );
-          // console.log(`Collected ${m.content}`);
           shotBetChannel.send(`${m.content}`);
-          // msg.channel.send(`Collected ${m.content}`);
         });
-
-        // collector.on("end", (collected) => {
-        //   console.log(`Collected ${collected.size} items`);
-        //   msg.channel.send(`Collected ${collected.size} items`);
-        // });
       }
     });
   }
